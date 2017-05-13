@@ -33,5 +33,5 @@ function createReducer(initialState, handlers) {
 }
 
 export default function createEntitiesReducer(initialState){
-  createReducer( initialState, entitiesHandlers )
+  return createReducer( initialState, entitiesHandlers )
 }
