@@ -1,0 +1,19 @@
+{
+  "name": "@bernatfortet/redux-firebase",
+  "version": "0.0.2",
+  "description": "Basement Libraries :: Redux Firebase",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernatfortet/basement.git"
+  },
+	"devDependencies":{
+    "flow-bin": "^0.40.0"
+	},
+  "author": "Bernat Fortet Unanue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bernatfortet/basement/issues"
+  },
+  "homepage": "https://github.com/bernatfortet/basement#readme"
+}
