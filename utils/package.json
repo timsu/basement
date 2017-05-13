@@ -1,7 +1,7 @@
 {
   "name": "@bernatfortet/utils",
   "version": "0.0.2",
-  "description": "Basement Libraries :: Javascript Utils",
+  "description": "Javascript Dev Utils",
   "main": "src/index.js",
   "repository": {
     "type": "git",

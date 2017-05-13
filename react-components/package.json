@@ -1,7 +1,7 @@
 {
   "name": "@bernatfortet/react-components",
   "version": "0.0.2",
-  "description": "Basement Libraries :: React Components",
+  "description": "Shared React Components",
   "main": "src/index.js",
   "repository": {
     "type": "git",

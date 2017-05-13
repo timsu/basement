@@ -1,7 +1,7 @@
 {
   "name": "@bernatfortet/redux-firebase",
   "version": "0.0.2",
-  "description": "Basement Libraries :: Redux Firebase",
+  "description": "Redux Firebase Helpers",
   "main": "src/index.js",
   "repository": {
     "type": "git",
