@@ -13,7 +13,7 @@ Utilities for Front End Development
 or
 
 ```js
-npm install --save @bernatfortet/react-components @bernatfortet/redux-firebase @bernatfortet/redux-entities @bernatfortet/utils
+yarn add --save @bernatfortet/react-components @bernatfortet/redux-firebase @bernatfortet/redux-entities @bernatfortet/utils
 ```
 
 

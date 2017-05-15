@@ -1,3 +1,4 @@
+// @flow
 export function isFilled(obj){
   if( typeof obj == 'string' || typeof obj == 'number' ){
     if( obj != null && obj != '' && obj != undefined)
@@ -93,4 +94,10 @@ export function isIn( compareValue, compareObject, param){
 
 export function toTitleCase(str){
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
+export function replaceAll(replaceThis, withThis, inThis) {
+  // From https://github.com/leecrossley/replaceall
+  withThis = withThis.replace(/\$/g,"$$$$");
+  return inThis.replace(new RegExp(replaceThis.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|<>\-\&])/g,"\\$&"),"g"), withThis)
 }
