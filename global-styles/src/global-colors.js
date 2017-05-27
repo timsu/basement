@@ -1,0 +1,20 @@
+export const globalColors = {
+  green: '#66DD16',
+  orange: '#FF6A23',
+  paleOrange: '#FFDD8D',
+  charcoal: '#3B484A',
+  blue: '#0084FF',
+
+  black: '#131313',
+  black90: '#2A2A2A',
+  black80: '#424242',
+  black70: '#595959',
+  black60: '#717171',
+  black50: '#898989',
+  black40: '#A1A1A1',
+  black30: '#B8B8B8',
+  black20: '#D0D0D0',
+  black10: '#E7E7E7',
+  black05: '#F3F3F3',
+  white: '#FFFFFF',
+}

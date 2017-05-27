@@ -1,0 +1,26 @@
+{
+  "name": "@bernatfortet/global-styles",
+  "version": "0.0.32",
+  "description": "Global Styles for styled-components",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernatfortet/basement.git"
+  },
+	"scripts": {
+ 		"compile": "babel --presets es2015,stage-0 -d lib/ src/",
+		"prepublish": "npm run compile"
+	},
+	"devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "flow-bin": "^0.40.0"
+  },
+  "author": "Bernat Fortet Unanue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bernatfortet/basement/issues"
+  },
+  "homepage": "https://github.com/bernatfortet/basement#readme"
+}
