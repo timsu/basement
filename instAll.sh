@@ -1,3 +1,5 @@
+cd ./global-styles && npm install
+cd ..
 cd ./react-components && npm install
 cd ..
 cd ./redux-entities 	&& npm install

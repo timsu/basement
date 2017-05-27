@@ -1,1 +1,1 @@
-module.exports = require('./src/reducer')
+module.exports = require('./lib/reducer')

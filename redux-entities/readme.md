@@ -15,5 +15,7 @@ import { entitiesReducingCases } from 'vendor/b-entities'
 export default createReducer(INITIAL_STATE, entitiesReducingCases )
 
 ## Actions
-import { storeEntities, storeNewEntity, storeData, removeEntity, removeEntityData } from 'vendor/b-entities/'
-export { storeEntities, storeNewEntity, storeData, removeEntity, removeEntityData }
+import { storeEntities, storeNewEntity, storeEntityData, removeEntity, removeEntityData } from '@bernatfortet/redux-entities'
+import createEntitiesReducer from '@bernatfortet/redux-entities/reducer'
+
+export { storeEntities, storeNewEntity, storeEntityData, removeEntity, removeEntityData }

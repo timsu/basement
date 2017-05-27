@@ -1,6 +1,6 @@
 {
   "name": "@bernatfortet/utils",
-  "version": "0.0.4",
+  "version": "0.0.53",
   "description": "Javascript Dev Utils",
   "main": "lib/index.js",
   "repository": {

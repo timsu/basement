@@ -35,7 +35,7 @@ export function isEmpty(obj){
  *    latter ones will sort after the former ones.  We do this by using the previous random bits
  *    but "incrementing" them by 1 (only in the case of a timestamp collision).
  */
-export function generatePushIdFunction(){
+export function generatePushId(){
   // Modeled after base64 web-safe chars, but ordered by ASCII.
   var PUSH_CHARS = '-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz'
 

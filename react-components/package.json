@@ -1,17 +1,17 @@
 {
   "name": "@bernatfortet/react-components",
-  "version": "0.0.3",
+  "version": "0.0.51",
   "description": "Shared React Components",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bernatfortet/basement.git"
   },
-	"scripts": {
- 		"compile": "babel --presets es2015,stage-0 -d lib/ src/",
-		"prepublish": "npm run compile"
-	},
-	"devDependencies": {
+  "scripts": {
+    "compile": "babel --presets es2015,stage-0 -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/bernatfortet/basement/issues"
   },
-  "homepage": "https://github.com/bernatfortet/basement#readme"
+  "homepage": "https://github.com/bernatfortet/basement#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.24.1"
+  }
 }
