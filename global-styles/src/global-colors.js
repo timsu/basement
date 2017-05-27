@@ -1,4 +1,4 @@
-export const globalColors = {
+export const c = {
   green: '#66DD16',
   orange: '#FF6A23',
   paleOrange: '#FFDD8D',

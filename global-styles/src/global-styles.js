@@ -1,9 +1,10 @@
-export const globalStyles = {
+export const s = {
 
   abs:            'position: absolute;',
   rel:            'position: relative;',
   flx1:           'flex: 1;',
   flxRow:         'flex-direction: row;',
+	flxCol:         'flex-direction: column;',
   flxRowReverse:  'flex-direction: row-reverse;',
   flxColReverse:  'flex-direction: column-reverse;',
   flxWrap:        'flex-wrap: wrap;',

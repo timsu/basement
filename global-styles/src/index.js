@@ -1,10 +1,8 @@
 import styled from 'styled-components'
-import globalStyles from './global-styles'
-import globalColors from './global-colors'
+import { s } from './global-styles'
+import { c } from './global-colors'
 
-export const c = globalColors
-export const s = globalStyles
-
+export { c, s }
 
 export const Column = styled.div`
   ${ p => p.hCenter ? 'align-items:: center' : '' }
