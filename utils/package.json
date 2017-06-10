@@ -1,17 +1,17 @@
 {
   "name": "@bernatfortet/utils",
-  "version": "0.0.53",
+  "version": "0.0.54",
   "description": "Javascript Dev Utils",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bernatfortet/basement.git"
   },
-	"scripts": {
- 		"compile": "babel --presets es2015,stage-0 -d lib/ src/",
-		"prepublish": "npm run compile"
-	},
-	"devDependencies": {
+  "scripts": {
+    "compile": "babel --presets es2015,stage-0 -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
+  "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",

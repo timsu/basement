@@ -15,6 +15,9 @@ export function isFilled(obj){
     }
 
   }
+	else if( typeof obj == 'function' ) {
+    return true
+  }
   else {
     //undefined?
     return false
