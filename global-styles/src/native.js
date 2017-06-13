@@ -1,3 +1,4 @@
+import { View } from 'react-native'
 import styled from 'styled-components/native'
 import { s } from './global-styles'
 import { c } from './global-colors'

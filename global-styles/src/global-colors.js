@@ -6,6 +6,7 @@ export const c = {
   blue: '#0084FF',
 
   black: '#131313',
+  black95: '#111111',
   black90: '#2A2A2A',
   black80: '#424242',
   black70: '#595959',
