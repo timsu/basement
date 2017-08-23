@@ -1,6 +1,6 @@
 {
   "name": "@bernatfortet/redux-firebase",
-  "version": "0.0.31",
+  "version": "0.0.35",
   "description": "Redux Firebase Helpers",
   "main": "lib/index.js",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "compile": "babel --presets es2015,stage-0 -d lib/ src/",
-    "prepublish": "npm run compile"
+    "prepare": "npm run compile && npm version patch"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/bernatfortet/basement/issues"
   },
-  "homepage": "https://github.com/bernatfortet/basement#readme"
+  "homepage": "https://github.com/bernatfortet/basement#readme",
+  "dependencies": {
+    "@bernatfortet/utils": "^0.0.55"
+  }
 }

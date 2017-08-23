@@ -2,23 +2,24 @@ export const s = {
 
   abs:            'position: absolute;',
   rel:            'position: relative;',
-  flx1:           'flex: 1;',
-  flxRow:         'flex-direction: row;',
-	flxCol:         'flex-direction: column;',
-  flxRowReverse:  'flex-direction: row-reverse;',
-  flxColReverse:  'flex-direction: column-reverse;',
-  flxWrap:        'flex-wrap: wrap;',
-  aifs:           'align-items: flex-start;',
-  aic:            'align-items: center;',
-  aife:           'align-items: flex-end;',
-  jcc:            'justify-content: center;',
-  jcfe:           'justify-content: flex-end;',
-  jcsb:           'justify-content: space-between;',
-  jcsa:           'justify-content: space-around;',
-  asfs:           'align-self: flex-start;',
-  asfe:           'align-self: flex-end;',
-  asc:            'align-self: center;',
-  ass:            'align-self: stretch;',
+  flx1:           'flex: 1; display:flex;',
+  flxRow:         'flex-direction: row; display:flex;',
+	flxCol:         'flex-direction: column; display:flex;',
+  flxRowReverse:  'flex-direction: row-reverse; display:flex;',
+  flxColReverse:  'flex-direction: column-reverse; display:flex;',
+  flxWrap:        'flex-wrap: wrap; display:flex;',
+  aifs:           'align-items: flex-start; display:flex;',
+  aic:            'align-items: center; display:flex;',
+	ais:            'align-items: stretch; display:flex;',
+  aife:           'align-items: flex-end; display:flex;',
+  jcc:            'justify-content: center; display:flex;',
+  jcfe:           'justify-content: flex-end; display:flex;',
+  jcsb:           'justify-content: space-between; display:flex;',
+  jcsa:           'justify-content: space-around; display:flex;',
+  asfs:           'align-self: flex-start; display:flex;',
+  asfe:           'align-self: flex-end; display:flex;',
+  asc:            'align-self: center; display:flex;',
+  ass:            'align-self: stretch; display:flex;',
 
 
   tal:            'text-align: left;',
@@ -33,5 +34,15 @@ export const s = {
   contain:        'background-size: contain',
 
   full:           'width:100%; height:100%',
+	ellipsis:       'text-overflow: ellipsis; overflow: hidden; white-space: nowrap;',
+
+	unselectabe:    'user-select: none;',
+
+	anim: css` transition: 200ms; `,
+	icon: css` width:${p => p.size}px; height:${p => p.size}px; font-size:${p => p.size}px; `,
+
+	unselectable: css` user-select:none; & * { user-select:none; } `,
+	untouchable: css` ${unselectable} pointer-events:none; & * { pointer-events:none; }  `,
+	actionable: css` ${unselectable} cursor:pointer;  `,
 
 }

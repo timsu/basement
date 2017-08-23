@@ -1,8 +1,12 @@
 // @flow
 export function isFilled(obj){
+	if( obj == null && obj == undefined ) return false
+
   if( typeof obj == 'string' || typeof obj == 'number' ){
     if( obj != null && obj != '' && obj != undefined)
       return true
+		else
+			return false
   }
   else if( typeof obj == 'object'){
     if( Array.isArray(obj) ){
@@ -99,8 +103,8 @@ export function toTitleCase(str){
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
 
-export function replaceAll(replaceThis, withThis, inThis) {
+export function replaceAll(toBeReplaced, replacement, inThis) {
   // From https://github.com/leecrossley/replaceall
-  withThis = withThis.replace(/\$/g,"$$$$");
-  return inThis.replace(new RegExp(replaceThis.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|<>\-\&])/g,"\\$&"),"g"), withThis)
+  replacement = replacement.replace(/\$/g,"$$$$");
+  return inThis.replace(new RegExp(toBeReplaced.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|<>\-\&])/g,"\\$&"),"g"), replacement)
 }

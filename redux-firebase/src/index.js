@@ -1,3 +1,5 @@
+// @flow weak
+import { replaceAll } from '@bernatfortet/utils'
 // Firebase Interface
 // @flow weak
 
@@ -44,12 +46,13 @@ export function removeData(dbRef) { return (dispatch, getState) => {
 
 // Entities Methods
 export function saveNewEntityToDb(firebaseApp, entityType, data) { return (dispatch, getState) => {
-	const dbRef = firebaseApp.database().ref(`${entityType}`)
+	const dbRef = firebaseApp.database().ref(`${entityType}/${data.id}`)
   return dispatch( setData(dbRef, data) )
 }}
 
 export function saveEntityDataToDb(firebaseApp, entityType, pathToData, data) { return (dispatch, getState) => {
-	const dbRef = firebaseApp.database().ref(`${entityType}/${pathToData}`)
+	const validPathToData = getValidPathToData( pathToData )
+	const dbRef = firebaseApp.database().ref(`${entityType}/${validPathToData}`)
   return dispatch( setData(dbRef, data) )
 }}
 
@@ -59,7 +62,8 @@ export function deleteEntityInDb(firebaseApp, entityType) { return (dispatch, ge
 }}
 
 export function deleteEntityDataInDB(firebaseApp, entityType, pathToData) { return (dispatch, getState) => {
-	const dbRef = firebaseApp.database().ref(`${entityType}/${pathToData}`)
+	const validPathToData = getValidPathToData( pathToData )
+	const dbRef = firebaseApp.database().ref(`${entityType}/${validPathToData}`)
   return dispatch( removeData(dbRef) )
 }}
 
@@ -74,6 +78,13 @@ function orderSnapshot(snapshot){
   return data
 }
 
+function getValidPathToData( path ){
+	const pathIsInvalid = path.split('.').length > 1
+  if( pathIsInvalid )
+		return replaceAll('.', '/', path)
+	else
+		return path
+}
 
 /*
 Usage

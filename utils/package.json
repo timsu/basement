@@ -1,6 +1,6 @@
 {
   "name": "@bernatfortet/utils",
-  "version": "0.0.54",
+  "version": "0.0.57",
   "description": "Javascript Dev Utils",
   "main": "lib/index.js",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "compile": "babel --presets es2015,stage-0 -d lib/ src/",
-    "prepublish": "npm run compile"
+    "prepare": "npm run compile && npm version patch"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
