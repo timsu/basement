@@ -1,8 +1,26 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { s } from './global-styles'
 import { c } from './global-colors'
-export { c, s }
+
+
+
+
+// const size = (size: number) => `width:${size ? size : 24}px; height:${size ? size : 24}px;`
+const anim = css` transition: 200ms; `
+const icon = css` width:${p => p.size}px; height:${p => p.size}px; font-size:${p => p.size}px; `
+
+const unselectable = css` user-select:none; & * { user-select:none; } `
+const untouchable = css` ${unselectable} pointer-events:none; & * { pointer-events:none; }  `
+const actionable = css` ${unselectable} cursor:pointer;  `
+const globalStyles = {
+	...s,
+	anim,
+	icon,
+	unselectable,
+	untouchable,
+	actionable,
+}
 
 const Root = styled.div``
 
@@ -40,3 +58,7 @@ export const Circle = styled(Root)`
   width: ${ p => p.size ? p.size : 24 }px; height: ${ p => p.size ? p.size : 24 }px; background-color: grey; border-radius:50%;`
 
 export const ScreenContainer = styled(Root)` width:100%; height:100%; ${s.flxRow} ${s.jcsb} ${s.aic} `
+
+// Helpers
+
+export { c, globalStyles as s }

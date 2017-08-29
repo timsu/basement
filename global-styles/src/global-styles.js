@@ -33,16 +33,9 @@ export const s = {
   cover:          'background-size: cover',
   contain:        'background-size: contain',
 
+  anchor:         'cursor: pointer',
+
   full:           'width:100%; height:100%',
 	ellipsis:       'text-overflow: ellipsis; overflow: hidden; white-space: nowrap;',
-
-	unselectabe:    'user-select: none;',
-
-	anim: css` transition: 200ms; `,
-	icon: css` width:${p => p.size}px; height:${p => p.size}px; font-size:${p => p.size}px; `,
-
-	unselectable: css` user-select:none; & * { user-select:none; } `,
-	untouchable: css` ${unselectable} pointer-events:none; & * { pointer-events:none; }  `,
-	actionable: css` ${unselectable} cursor:pointer;  `,
 
 }
