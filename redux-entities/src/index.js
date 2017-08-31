@@ -7,6 +7,9 @@ import * as TYPES from './actionTypes'
 export function storeEntities( entities ){
   return { type: TYPES.STORE_ENTITIES, entities }
 }
+export function storeEntity( entityType, data ){
+  return { type: TYPES.STORE_ENTITIY, entityType, data }
+}
 export function storeNewEntity( entityType, data ){
   if( !data.id || data.id == '' || data.id == undefined || data.id == null )
 		console.log( 'ERROR — Entity Data requires an ID')

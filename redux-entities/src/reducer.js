@@ -8,6 +8,9 @@ const entitiesHandlers = {
   [TYPE.STORE_ENTITIES]( state, { entities } ) {
     return { ...state, ...entities }
   },
+	[TYPE.STORE_ENTITIY]( entities, { entityType, data } ) {
+    return immutable.set( entities, `${entityType}`, data )
+  },
   [TYPE.STORE_NEW_ENTITY]( entities, { entityType, data } ) {
     return immutable.set( entities, `${entityType}.${data.id}`, data )
   },
