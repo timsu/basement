@@ -1,6 +1,6 @@
 {
   "name": "@bernatfortet/redux-entities",
-  "version": "0.0.52",
+  "version": "0.0.53",
   "description": "Redux Entities helpers",
   "main": "lib/index.js",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@bernatfortet/global-styles",
-  "version": "0.0.56",
+  "version": "0.0.66",
   "description": "Global Styles for styled-components",
   "main": "lib/index.js",
   "repository": {
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/bernatfortet/basement/issues"
   },
-  "homepage": "https://github.com/bernatfortet/basement#readme"
+  "homepage": "https://github.com/bernatfortet/basement#readme",
+  "dependencies": {
+    "styled-components": "^2.2.1"
+  }
 }

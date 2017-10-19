@@ -27,15 +27,17 @@ export const s = {
   tar:            'text-align: right;',
 
   ofh:            'overflow: hidden;',
-  rounded:        'borderRadius: 6px',
-  cardShadow:     'box-shadow 0 2px 8px rgba(0,0,0,0.2)',
+  rounded:        'borderRadius: 6px;',
+  cardShadow:     'box-shadow 0 2px 8px rgba(0,0,0,0.2);',
 
-  cover:          'background-size: cover',
-  contain:        'background-size: contain',
+  cover:          'background-size: cover;',
+  contain:        'background-size: contain;',
 
-  anchor:         'cursor: pointer',
+  anchor:         'cursor: pointer;',
 
-  full:           'width:100%; height:100%',
+  full:           'width:100%; height:100%;',
 	ellipsis:       'text-overflow: ellipsis; overflow: hidden; white-space: nowrap;',
+
+	size: ( value = 20 ) => { return `width:${value}px; height:${value}px;` },
 
 }

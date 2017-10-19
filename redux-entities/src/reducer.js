@@ -17,10 +17,10 @@ const entitiesHandlers = {
   [TYPE.STORE_ENTITY_DATA]( entities, { entityType, pathToData, data } ) {
     return immutable.set( entities, `${entityType}.${pathToData}`, data )
   },
-  [TYPE.REMOVE_ENTITY]( entities, { entityType, id } ) {
+  [TYPE.DELETE_ENTITY]( entities, { entityType, id } ) {
     return immutable.del( entities, `${entityType}.${id}`)
   },
-  [TYPE.REMOVE_ENTITY_DATA]( entities, { entityType, pathToData } ) {
+  [TYPE.DELETE_ENTITY_DATA]( entities, { entityType, pathToData } ) {
     return immutable.del( entities, `${entityType}.${pathToData}`)
   },
 }

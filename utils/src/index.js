@@ -108,3 +108,7 @@ export function replaceAll(toBeReplaced, replacement, inThis) {
   replacement = replacement.replace(/\$/g,"$$$$");
   return inThis.replace(new RegExp(toBeReplaced.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|<>\-\&])/g,"\\$&"),"g"), replacement)
 }
+
+export function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}

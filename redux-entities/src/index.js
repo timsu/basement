@@ -18,9 +18,9 @@ export function storeNewEntity( entityType, data ){
 export function storeEntityData( entityType, pathToData, data ){
   return { type: TYPES.STORE_ENTITY_DATA, entityType, pathToData, data }
 }
-export function removeEntity( entityType, id ){
-  return { type: TYPES.REMOVE_ENTITY, entityType, id }
+export function deleteEntity( entityType, id ){
+  return { type: TYPES.DELETE_ENTITY, entityType, id }
 }
-export function removeEntityData( entityType, pathToData ){
-  return { type: TYPES.REMOVE_ENTITY_DATA, entityType, pathToData }
+export function deleteEntityData( entityType, pathToData ){
+  return { type: TYPES.DELETE_ENTITY_DATA, entityType, pathToData }
 }
