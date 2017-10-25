@@ -6,7 +6,7 @@ import { c } from './global-colors'
 
 
 
-// const size = (size: number) => `width:${size ? size : 24}px; height:${size ? size : 24}px;`
+const size = (size) => `width:${size ? size : 24}px; height:${size ? size : 24}px;`
 const anim = css` transition: 200ms; `
 const icon = css` width:${p => p.size}px; height:${p => p.size}px; font-size:${p => p.size}px; `
 
@@ -15,6 +15,7 @@ const untouchable = css` ${unselectable} pointer-events:none; & * { pointer-even
 const actionable = css` ${unselectable} cursor:pointer;  `
 const globalStyles = {
 	...s,
+	size,
 	anim,
 	icon,
 	unselectable,
