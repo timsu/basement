@@ -9,6 +9,7 @@ export default class Input extends Component {
     className: '',
     name: '',
     type: 'text',
+    required: false,
     onFocus: event => {},
     onChange: event => {},
     onBlur: event => {},
@@ -25,7 +26,7 @@ export default class Input extends Component {
   }
 
   render(){
-    const { placeholder, type, className, name } = this.props
+    const { placeholder, type, className, name, required } = this.props
     const { value } = this.state
     return(
       <InputField
@@ -37,6 +38,7 @@ export default class Input extends Component {
         onChange={this.onChange}
         onBlur={this.onBlur}
         name={name}
+        required={required}
        />
     )
   }
@@ -58,9 +60,8 @@ export default class Input extends Component {
   getValue(){
     return this.state.value
   }
-
-
 }
+
 
 // Styles
 import styled from 'styled-components'
@@ -70,7 +71,7 @@ import * as m from 'styles/main'
 const InputField = styled.input`
   flex:1; padding:20px; margin-bottom:8px; ${s.ass}
   background:${m.colors.black05}; ${m.rounding} border:0; outline:0;
-  ${m.t1}
+  ${m.t1} ${s.anchor}
 
   &::placeholder{ color:${m.colors.black40}; }
   &:hover::placeholder{ color:${m.colors.black70}; }
