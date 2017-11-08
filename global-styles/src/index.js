@@ -7,12 +7,31 @@ import { c } from './global-colors'
 
 
 const size = (size) => `width:${size ? size : 24}px; height:${size ? size : 24}px;`
-const anim = css` transition: 200ms; `
+const anim = css` transition:100ms;
+	&:hover{ transition: all 250ms; }
+`
 const icon = css` width:${p => p.size}px; height:${p => p.size}px; font-size:${p => p.size}px; `
 
 const unselectable = css` user-select:none; & * { user-select:none; } `
 const untouchable = css` ${unselectable} pointer-events:none; & * { pointer-events:none; }  `
 const actionable = css` ${unselectable} cursor:pointer;  `
+
+
+const baseTriangle = css` content:'';  width:0; height:0; `
+export const triangleRight = ( size: number, color: string ) => css` ${baseTriangle}
+	border-top:${size}px solid transparent; border-bottom:${size}px solid transparent; border-left:${size}px solid ${color}; }
+`
+export const triangleLeft = ( size: number, color: string ) => css` ${baseTriangle}
+	border-top:${size}px solid transparent; border-bottom:${size}px solid transparent; border-right:${size}px solid ${color}; }
+`
+export const triangleUp = ( size: number, color: string ) => css` ${baseTriangle}
+	border-left:${size}px solid transparent; border-right:${size}px solid transparent; border-bottom:${size}px solid ${color}; }
+`
+export const triangleDown = ( size: number, color: string ) => css` ${baseTriangle}
+	border-left:${size}px solid transparent; border-right:${size}px solid transparent; border-top:${size}px solid ${color}; }
+`
+
+
 const globalStyles = {
 	...s,
 	size,
@@ -65,6 +84,7 @@ export const CircularAvatar = styled(Root)`
 `
 
 export const Rounded = styled(Root)` border-radius: ${ p => p.radius ? p.radius : 6 }px `
+export const Spacer = styled(Root)` width:${ p => p.w}px; height:${ p => p.w}px; `
 export const Card = styled(Rounded, Row)`padding:20px; background-color:white; ${s.cardShadow} `
 
 export const Circle = styled(Root)`
