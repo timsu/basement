@@ -4,8 +4,6 @@ import { s } from './global-styles'
 import { c } from './global-colors'
 
 
-
-
 const size = (size) => `width:${size ? size : 24}px; height:${size ? size : 24}px;`
 const anim = css` transition:100ms;
 	&:hover{ transition: all 250ms; }
@@ -18,16 +16,16 @@ const actionable = css` ${unselectable} cursor:pointer;  `
 
 
 const baseTriangle = css` content:'';  width:0; height:0; `
-export const triangleRight = ( size: number, color: string ) => css` ${baseTriangle}
+export const triangleRight = ( size, color ) => css` ${baseTriangle}
 	border-top:${size}px solid transparent; border-bottom:${size}px solid transparent; border-left:${size}px solid ${color}; }
 `
-export const triangleLeft = ( size: number, color: string ) => css` ${baseTriangle}
+export const triangleLeft = ( size, color ) => css` ${baseTriangle}
 	border-top:${size}px solid transparent; border-bottom:${size}px solid transparent; border-right:${size}px solid ${color}; }
 `
-export const triangleUp = ( size: number, color: string ) => css` ${baseTriangle}
+export const triangleUp = ( size, color ) => css` ${baseTriangle}
 	border-left:${size}px solid transparent; border-right:${size}px solid transparent; border-bottom:${size}px solid ${color}; }
 `
-export const triangleDown = ( size: number, color: string ) => css` ${baseTriangle}
+export const triangleDown = ( size, color ) => css` ${baseTriangle}
 	border-left:${size}px solid transparent; border-right:${size}px solid transparent; border-top:${size}px solid ${color}; }
 `
 
@@ -40,6 +38,10 @@ const globalStyles = {
 	unselectable,
 	untouchable,
 	actionable,
+	triangleRight,
+	triangleLeft,
+	triangleUp,
+	triangleDown,
 }
 
 const Root = styled.div``
