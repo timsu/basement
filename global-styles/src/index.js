@@ -14,6 +14,23 @@ const unselectable = css` user-select:none; & * { user-select:none; } `
 const untouchable = css` ${unselectable} pointer-events:none; & * { pointer-events:none; }  `
 const actionable = css` ${unselectable} cursor:pointer;  `
 
+const media = {
+  sm: (...args) => css`
+    @media (max-width: 500px) {
+      ${ css(...args) }
+    }
+  `,
+	md: (...args) => css`
+    @media (max-width: 768px) {
+      ${ css(...args) }
+    }
+  `,
+	lg: (...args) => css`
+    @media (max-width: 1100px) {
+      ${ css(...args) }
+    }
+  `
+}
 
 const baseTriangle = css` content:'';  width:0; height:0; `
 export const triangleRight = ( size, color ) => css` ${baseTriangle}
@@ -35,6 +52,7 @@ const globalStyles = {
 	size,
 	anim,
 	icon,
+	media,
 	unselectable,
 	untouchable,
 	actionable,
@@ -46,9 +64,7 @@ const globalStyles = {
 
 const Root = styled.div``
 
-export const Column = styled(Root)`
-  ${ p => p.hCenter ? s.aic : '' }
-  ${ p => p.vCenter ? s.jcc : '' }
+const commonProps = css`
 	${ p => p.jcc 		? s.jcc : '' }
 	${ p => p.jcsa 		? s.jcsa : '' }
 	${ p => p.jcsb 		? s.jcsb : '' }
@@ -58,22 +74,23 @@ export const Column = styled(Root)`
 	${ p => p.aifs 		? s.aifs : '' }
 	${ p => p.aife 		? s.aife : '' }
 	${ p => p.ass   	? s.ass : '' }
+
 	${ p => p.flex 		? `flex:${p.flex};` : '' }
+	${p => p.smHide ? media.sm` display:none;` : '' }
+	${p => p.mdHide ? media.md` display:none;` : '' }
+	${p => p.lgHide ? media.lg` display:none;` : '' }
+`
+
+export const Column = styled(Root)`
+  ${ p => p.hCenter ? s.aic : '' }
+  ${ p => p.vCenter ? s.jcc : '' }
+	${commonProps}
   ${s.flxCol}
 `
 export const Row = styled(Root)`
   ${ p => p.hCenter ? s.jcc : '' }
 	${ p => p.vCenter ? s.aic : '' }
-	${ p => p.jcc 		? s.jcc : '' }
-	${ p => p.jcsa 		? s.jcsa : '' }
-	${ p => p.jcsb 		? s.jcsb : '' }
-	${ p => p.jcfs 		? s.jcfs : '' }
-	${ p => p.jcfe 		? s.jcfe : '' }
-	${ p => p.aic 		? s.aic : '' }
-	${ p => p.aifs 		? s.aifs : '' }
-	${ p => p.aife 		? s.aife : '' }
-	${ p => p.ass   	? s.ass : '' }
-	${ p => p.flex 		? `flex:${p.flex};` : '' }
+	${commonProps}
   ${s.flxRow}
 `
 
