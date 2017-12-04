@@ -32,6 +32,9 @@ const media = {
   `
 }
 
+const hideVisually = css` border: 0; clip: rect(0 0 0 0); clipPath: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px;
+`
+
 const baseTriangle = css` content:'';  width:0; height:0; `
 export const triangleRight = ( size, color ) => css` ${baseTriangle}
 	border-top:${size}px solid transparent; border-bottom:${size}px solid transparent; border-left:${size}px solid ${color}; }
@@ -76,9 +79,9 @@ const commonProps = css`
 	${ p => p.ass   	? s.ass : '' }
 
 	${ p => p.flex 		? `flex:${p.flex};` : '' }
-	${p => p.smHide ? media.sm` display:none;` : '' }
-	${p => p.mdHide ? media.md` display:none;` : '' }
-	${p => p.lgHide ? media.lg` display:none;` : '' }
+	${p => p.smHide ? media.sm` ${hideVisually}` : '' }
+	${p => p.mdHide ? media.md` ${hideVisually}` : '' }
+	${p => p.lgHide ? media.lg` ${hideVisually}` : '' }
 `
 
 export const Column = styled(Root)`
@@ -103,7 +106,7 @@ export const CircularAvatar = styled(Root)`
 `
 
 export const Rounded = styled(Root)` border-radius: ${ p => p.radius ? p.radius : 6 }px `
-export const Spacer = styled(Root)` width:${ p => p.w}px; height:${ p => p.w}px; `
+export const Spacer = styled(Root)` width:${ p => p.w}px; height:${ p => p.h}px; `
 export const Card = styled(Rounded, Row)`padding:20px; background-color:white; ${s.cardShadow} `
 
 export const Circle = styled(Root)`

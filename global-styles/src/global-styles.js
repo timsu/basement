@@ -5,6 +5,7 @@ export const s = {
 	absVCenter: 		'position: absolute; top:0; bottom:0; margin-top:auto; margin-bottom:auto;',
   rel:            'position: relative;',
 
+	flx:           	'display:flex;',
   flx1:           'flex: 1; display:flex;',
   flxRow:         'flex-direction: row; display:flex;',
 	flxCol:         'flex-direction: column; display:flex;',
