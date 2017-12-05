@@ -106,7 +106,7 @@ export const CircularAvatar = styled(Root)`
 `
 
 export const Rounded = styled(Root)` border-radius: ${ p => p.radius ? p.radius : 6 }px `
-export const Spacer = styled(Root)` width:${ p => p.w}px; height:${ p => p.h}px; `
+export const Spacer = styled(Root)` ${p => p.w ? `width:${p.w}px`: ''}  ${p => p.h ? `height:${p.h}px`: ''} `
 export const Card = styled(Rounded, Row)`padding:20px; background-color:white; ${s.cardShadow} `
 
 export const Circle = styled(Root)`
