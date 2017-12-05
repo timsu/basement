@@ -68,17 +68,44 @@ const globalStyles = {
 const Root = styled.div``
 
 const commonProps = css`
+	${'' /* Flex Props */}
 	${ p => p.jcc 		? s.jcc : '' }
 	${ p => p.jcsa 		? s.jcsa : '' }
 	${ p => p.jcsb 		? s.jcsb : '' }
 	${ p => p.jcfs 		? s.jcfs : '' }
 	${ p => p.jcfe 		? s.jcfe : '' }
+
 	${ p => p.aic 		? s.aic : '' }
 	${ p => p.aifs 		? s.aifs : '' }
 	${ p => p.aife 		? s.aife : '' }
-	${ p => p.ass   	? s.ass : '' }
 
+	${ p => p.ass   	? s.ass : '' }
+	${ p => p.asfs   	? s.asfs : '' }
+	${ p => p.asfe   	? s.asfe : '' }
+	${ p => p.asc   	? s.asc : '' }
+
+	${ p => p.wrap 		? s.flxWrap : '' }
 	${ p => p.flex 		? `flex:${p.flex};` : '' }
+	${ p => p.order   ? `order:${p.order};` : '' }
+
+	${'' /* Margin Props */}
+	${ p => p.mh   	? `margin-left:${p.mh}px; margin-right:${p.mh}px;` : '' }
+	${ p => p.mv   	? `margin-top:${p.mv}px; margin-bottom:${p.mv}px;` : '' }
+	${ p => p.mt   	? `margin-top:${p.mt}px;` : '' }
+	${ p => p.mr   	? `margin-right:${p.mt}px;` : '' }
+	${ p => p.mb   	? `margin-bottom:${p.mt}px;` : '' }
+	${ p => p.ml   	? `margin-left:${p.mt}px;` : '' }
+
+	${'' /* Padding Props */}
+	${ p => p.ph   	? `padding-left:${p.ph}px; padding-right:${p.ph}px;` : '' }
+	${ p => p.pv   	? `padding-top:${p.pv}px; padding-bottom:${p.pv}px;` : '' }
+	${ p => p.pt   	? `padding-top:${p.pt}px;` : '' }
+	${ p => p.pr   	? `padding-right:${p.pt}px;` : '' }
+	${ p => p.pb   	? `padding-bottom:${p.pt}px;` : '' }
+	${ p => p.pl   	? `padding-left:${p.pt}px;` : '' }
+
+
+	${'' /* Media Props */}
 	${p => p.smHide ? media.sm` ${hideVisually}` : '' }
 	${p => p.mdHide ? media.md` ${hideVisually}` : '' }
 	${p => p.lgHide ? media.lg` ${hideVisually}` : '' }
