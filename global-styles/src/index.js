@@ -89,6 +89,7 @@ const commonProps = css`
 	${ p => p.order   ? `order:${p.order};` : '' }
 
 	${'' /* Margin Props */}
+	${ p => p.m   	? `padding:${p.m}px;` : '' }
 	${ p => p.mh   	? `margin-left:${p.mh}px; margin-right:${p.mh}px;` : '' }
 	${ p => p.mv   	? `margin-top:${p.mv}px; margin-bottom:${p.mv}px;` : '' }
 	${ p => p.mt   	? `margin-top:${p.mt}px;` : '' }
@@ -97,6 +98,7 @@ const commonProps = css`
 	${ p => p.ml   	? `margin-left:${p.ml}px;` : '' }
 
 	${'' /* Padding Props */}
+	${ p => p.p   	? `padding:${p.p}px;` : '' }
 	${ p => p.ph   	? `padding-left:${p.ph}px; padding-right:${p.ph}px;` : '' }
 	${ p => p.pv   	? `padding-top:${p.pv}px; padding-bottom:${p.pv}px;` : '' }
 	${ p => p.pt   	? `padding-top:${p.pt}px;` : '' }
