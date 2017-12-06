@@ -92,17 +92,17 @@ const commonProps = css`
 	${ p => p.mh   	? `margin-left:${p.mh}px; margin-right:${p.mh}px;` : '' }
 	${ p => p.mv   	? `margin-top:${p.mv}px; margin-bottom:${p.mv}px;` : '' }
 	${ p => p.mt   	? `margin-top:${p.mt}px;` : '' }
-	${ p => p.mr   	? `margin-right:${p.mt}px;` : '' }
-	${ p => p.mb   	? `margin-bottom:${p.mt}px;` : '' }
-	${ p => p.ml   	? `margin-left:${p.mt}px;` : '' }
+	${ p => p.mr   	? `margin-right:${p.mr}px;` : '' }
+	${ p => p.mb   	? `margin-bottom:${p.mb}px;` : '' }
+	${ p => p.ml   	? `margin-left:${p.ml}px;` : '' }
 
 	${'' /* Padding Props */}
 	${ p => p.ph   	? `padding-left:${p.ph}px; padding-right:${p.ph}px;` : '' }
 	${ p => p.pv   	? `padding-top:${p.pv}px; padding-bottom:${p.pv}px;` : '' }
 	${ p => p.pt   	? `padding-top:${p.pt}px;` : '' }
-	${ p => p.pr   	? `padding-right:${p.pt}px;` : '' }
-	${ p => p.pb   	? `padding-bottom:${p.pt}px;` : '' }
-	${ p => p.pl   	? `padding-left:${p.pt}px;` : '' }
+	${ p => p.pr   	? `padding-right:${p.pr}px;` : '' }
+	${ p => p.pb   	? `padding-bottom:${p.pb}px;` : '' }
+	${ p => p.pl   	? `padding-left:${p.pl}px;` : '' }
 
 
 	${'' /* Media Props */}
