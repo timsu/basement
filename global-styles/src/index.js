@@ -124,6 +124,8 @@ export const Row = styled(Root)`
   ${s.flxRow}
 `
 
+export const Box = styled(Root)` ${commonProps} `
+
 export const Flex1 = styled(Root)` display:flex; flex:1;`
 
 export const CircularAvatar = styled(Root)`
