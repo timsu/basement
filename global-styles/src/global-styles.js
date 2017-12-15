@@ -16,16 +16,22 @@ export const s = {
   aic:            'align-items: center; display:flex;',
 	ais:            'align-items: stretch; display:flex;',
   aife:           'align-items: flex-end; display:flex;',
+
   jcc:            'justify-content: center; display:flex;',
 	jcfs:           'justify-content: flex-start; display:flex;',
   jcfe:           'justify-content: flex-end; display:flex;',
   jcsb:           'justify-content: space-between; display:flex;',
   jcsa:           'justify-content: space-around; display:flex;',
+
   asfs:           'align-self: flex-start; display:flex;',
   asfe:           'align-self: flex-end; display:flex;',
   asc:            'align-self: center; display:flex;',
   ass:            'align-self: stretch; display:flex;',
 
+	jsfs:           'justify-self: flex-start; display:flex;',
+  jsfe:           'justify-self: flex-end; display:flex;',
+  jsc:            'justify-self: center; display:flex;',
+  jss:            'justify-self: stretch; display:flex;',
 
   tal:            'text-align: left;',
   tac:            'text-align: center;',

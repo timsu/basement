@@ -84,6 +84,11 @@ const commonProps = css`
 	${ p => p.asfe   	? s.asfe : '' }
 	${ p => p.asc   	? s.asc : '' }
 
+	${ p => p.jss   	? s.jss : '' }
+	${ p => p.jsfs   	? s.jsfs : '' }
+	${ p => p.jsfe   	? s.jsfe : '' }
+	${ p => p.jsc   	? s.jsc : '' }
+
 	${ p => p.wrap 		? s.flxWrap : '' }
 	${ p => p.flex 		? `flex:${p.flex};` : '' }
 	${ p => p.order   ? `order:${p.order};` : '' }
@@ -126,7 +131,10 @@ export const Row = styled(Root)`
   ${s.flxRow}
 `
 
-export const Box = styled(Root)` ${commonProps} `
+export const Box = styled(Root)` ${commonProps}
+	${ p => p.column ? s.flxCol : '' }
+	${ p => p.row ? s.flxRow : '' }
+`
 
 export const Flex1 = styled(Root)` display:flex; flex:1;`
 
