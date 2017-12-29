@@ -1,3 +1,5 @@
+import React from 'react'
+
 import styled, { css } from 'styled-components'
 
 import { s } from './global-styles'
@@ -32,7 +34,7 @@ const media = {
   `
 }
 
-const hideVisually = css` border: 0; clip: rect(0 0 0 0); clipPath: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px;
+export const hideVisually = css` border: 0; clip: rect(0 0 0 0); clipPath: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px;
 `
 
 const baseTriangle = css` content:'';  width:0; height:0; `
@@ -50,24 +52,29 @@ export const triangleDown = ( size, color ) => css` ${baseTriangle}
 `
 
 
-const globalStyles = {
-	...s,
-	size,
-	anim,
-	icon,
-	media,
-	unselectable,
-	untouchable,
-	actionable,
-	triangleRight,
-	triangleLeft,
-	triangleUp,
-	triangleDown,
-}
-
 const Root = styled.div``
 
-const commonProps = css`
+export const spacingProps = css`
+	${'' /* Margin Props */}
+	${ p => p.m   	? `padding:${p.m}px;` : '' }
+	${ p => p.mh   	? `margin-left:${p.mh}px; margin-right:${p.mh}px;` : '' }
+	${ p => p.mv   	? `margin-top:${p.mv}px; margin-bottom:${p.mv}px;` : '' }
+	${ p => p.mt   	? `margin-top:${p.mt}px;` : '' }
+	${ p => p.mr   	? `margin-right:${p.mr}px;` : '' }
+	${ p => p.mb   	? `margin-bottom:${p.mb}px;` : '' }
+	${ p => p.ml   	? `margin-left:${p.ml}px;` : '' }
+
+	${'' /* Padding Props */}
+	${ p => p.p   	? `padding:${p.p}px;` : '' }
+	${ p => p.ph   	? `padding-left:${p.ph}px; padding-right:${p.ph}px;` : '' }
+	${ p => p.pv   	? `padding-top:${p.pv}px; padding-bottom:${p.pv}px;` : '' }
+	${ p => p.pt   	? `padding-top:${p.pt}px;` : '' }
+	${ p => p.pr   	? `padding-right:${p.pr}px;` : '' }
+	${ p => p.pb   	? `padding-bottom:${p.pb}px;` : '' }
+	${ p => p.pl   	? `padding-left:${p.pl}px;` : '' }
+`
+
+export const boxProps = css`
 	${'' /* Flex Props */}
 	${ p => p.jcc 		? s.jcc : '' }
 	${ p => p.jcsa 		? s.jcsa : '' }
@@ -93,24 +100,7 @@ const commonProps = css`
 	${ p => p.flex 		? `flex:${p.flex};` : '' }
 	${ p => p.order   ? `order:${p.order};` : '' }
 
-	${'' /* Margin Props */}
-	${ p => p.m   	? `padding:${p.m}px;` : '' }
-	${ p => p.mh   	? `margin-left:${p.mh}px; margin-right:${p.mh}px;` : '' }
-	${ p => p.mv   	? `margin-top:${p.mv}px; margin-bottom:${p.mv}px;` : '' }
-	${ p => p.mt   	? `margin-top:${p.mt}px;` : '' }
-	${ p => p.mr   	? `margin-right:${p.mr}px;` : '' }
-	${ p => p.mb   	? `margin-bottom:${p.mb}px;` : '' }
-	${ p => p.ml   	? `margin-left:${p.ml}px;` : '' }
-
-	${'' /* Padding Props */}
-	${ p => p.p   	? `padding:${p.p}px;` : '' }
-	${ p => p.ph   	? `padding-left:${p.ph}px; padding-right:${p.ph}px;` : '' }
-	${ p => p.pv   	? `padding-top:${p.pv}px; padding-bottom:${p.pv}px;` : '' }
-	${ p => p.pt   	? `padding-top:${p.pt}px;` : '' }
-	${ p => p.pr   	? `padding-right:${p.pr}px;` : '' }
-	${ p => p.pb   	? `padding-bottom:${p.pb}px;` : '' }
-	${ p => p.pl   	? `padding-left:${p.pl}px;` : '' }
-
+	${spacingProps}
 
 	${'' /* Media Props */}
 	${p => p.smHide ? media.sm` ${hideVisually}` : '' }
@@ -121,20 +111,21 @@ const commonProps = css`
 export const Column = styled(Root)`
   ${ p => p.hCenter ? s.aic : '' }
   ${ p => p.vCenter ? s.jcc : '' }
-	${commonProps}
+	${boxProps}
   ${s.flxCol}
 `
 export const Row = styled(Root)`
   ${ p => p.hCenter ? s.jcc : '' }
 	${ p => p.vCenter ? s.aic : '' }
-	${commonProps}
+	${boxProps}
   ${s.flxRow}
 `
-
-export const Box = styled(Root)` ${commonProps}
+export const Box = styled(({ tag, children, ...props }) => React.createElement(tag ? tag : Root, props, children))`
+	${boxProps}
 	${ p => p.column ? s.flxCol : '' }
 	${ p => p.row ? s.flxRow : '' }
 `
+
 
 export const Flex1 = styled(Root)` display:flex; flex:1;`
 
@@ -153,6 +144,26 @@ export const Circle = styled(Root)`
 
 export const ScreenContainer = styled(Root)` width:100%; height:100%; ${s.flxRow} ${s.jcsb} ${s.aic} `
 
+
+
+const globalStyles = {
+	...s,
+
+	size,
+	anim,
+	icon,
+	media,
+	hideVisually,
+	unselectable,
+	untouchable,
+	actionable,
+	triangleRight,
+	triangleLeft,
+	triangleUp,
+	triangleDown,
+	boxProps,
+	spacingProps,
+}
 
 // Helpers
 
