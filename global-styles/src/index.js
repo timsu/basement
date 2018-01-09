@@ -7,7 +7,7 @@ import { c } from './global-colors'
 
 
 const size = (size) => `width:${size ? size : 24}px; height:${size ? size : 24}px;`
-const anim = css` transition:250ms;
+const anim = css` transition:300ms;
 	&:hover{ transition: all 100ms; }
 `
 const icon = css` width:${p => p.size}px; height:${p => p.size}px; font-size:${p => p.size}px; `
@@ -97,9 +97,9 @@ export const boxProps = css`
 	${ p => p.jsc   	? s.jsc : '' }
 
 	${ p => p.wrap 		? s.flxWrap : '' }
-	${ p => p.flxWrap 		? s.flxWrap : '' }
-	${ p => p.flex 		? `flex:${p.flex};` : '' }
-	${ p => p.order   ? `order:${p.order};` : '' }
+	${ p => p.flxWrap ? s.flxWrap : '' }
+	${ p => p.flex 		? `display:flex; flex:${p.flex};` : '' }
+	${ p => p.order   ? `display:flex; order:${p.order};` : '' }
 
 	${spacingProps}
 
@@ -137,7 +137,7 @@ export const CircularAvatar = styled(Root)`
 `
 
 export const Rounded = styled(Root)` border-radius: ${ p => p.radius ? p.radius : 6 }px `
-export const Spacer = styled(Root)` ${p => p.w ? `width:${p.w}px`: ''}  ${p => p.h ? `height:${p.h}px`: ''} `
+export const Spacer = styled(Root)` ${p => p.w ? `width:${p.w}px;`: ''}  ${p => p.h ? `height:${p.h}px;`: ''} `
 export const Card = styled(Rounded, Row)`padding:20px; background-color:white; ${s.cardShadow} `
 
 export const Circle = styled(Root)`
