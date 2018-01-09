@@ -7,8 +7,8 @@ import { c } from './global-colors'
 
 
 const size = (size) => `width:${size ? size : 24}px; height:${size ? size : 24}px;`
-const anim = css` transition:100ms;
-	&:hover{ transition: all 250ms; }
+const anim = css` transition:250ms;
+	&:hover{ transition: all 100ms; }
 `
 const icon = css` width:${p => p.size}px; height:${p => p.size}px; font-size:${p => p.size}px; `
 
@@ -97,6 +97,7 @@ export const boxProps = css`
 	${ p => p.jsc   	? s.jsc : '' }
 
 	${ p => p.wrap 		? s.flxWrap : '' }
+	${ p => p.flxWrap 		? s.flxWrap : '' }
 	${ p => p.flex 		? `flex:${p.flex};` : '' }
 	${ p => p.order   ? `order:${p.order};` : '' }
 
