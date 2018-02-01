@@ -56,7 +56,7 @@ const Root = styled.div``
 
 export const spacingProps = css`
 	${'' /* Margin Props */}
-	${ p => p.m   	? `padding:${p.m}px;` : '' }
+	${ p => p.m   	? `margin:${p.m}px;` : '' }
 	${ p => p.mh   	? `margin-left:${p.mh}px; margin-right:${p.mh}px;` : '' }
 	${ p => p.mv   	? `margin-top:${p.mv}px; margin-bottom:${p.mv}px;` : '' }
 	${ p => p.mt   	? `margin-top:${p.mt}px;` : '' }
