@@ -54,6 +54,11 @@ export const triangleDown = ( size, color ) => css` ${baseTriangle}
 
 const Root = styled.div``
 
+export const dimensionProps = css`
+	${p => p.w ? `width:${p.w}px;`: ''}
+	${p => p.h ? `height:${p.h}px;`: ''}
+`
+
 export const spacingProps = css`
 	${'' /* Margin Props */}
 	${ p => p.m   	? `margin:${p.m}px;` : '' }
@@ -102,6 +107,7 @@ export const boxProps = css`
 	${ p => p.order   ? `display:flex; order:${p.order};` : '' }
 
 	${spacingProps}
+	${dimensionProps}
 
 	${'' /* Media Props */}
 	${p => p.smHide ? media.sm` ${hideVisually}` : '' }
@@ -137,7 +143,7 @@ export const CircularAvatar = styled(Root)`
 `
 
 export const Rounded = styled(Root)` border-radius: ${ p => p.radius ? p.radius : 6 }px `
-export const Spacer = styled(Root)` ${p => p.w ? `width:${p.w}px;`: ''}  ${p => p.h ? `height:${p.h}px;`: ''} `
+export const Spacer = styled(Root)` ${dimensionProps} `
 export const Card = styled(Rounded, Row)`padding:20px; background-color:white; ${s.cardShadow} `
 
 export const Circle = styled(Root)`
