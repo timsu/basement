@@ -31,7 +31,9 @@ export const s = {
 	jsfs:           'justify-self: flex-start; display:flex;',
   jsfe:           'justify-self: flex-end; display:flex;',
   jsc:            'justify-self: center; display:flex;',
-  jss:            'justify-self: stretch; display:flex;',
+	jss:            'justify-self: stretch; display:flex;',
+
+  if:            'display:inline-flex;',
 
   tal:            'text-align: left;',
   tac:            'text-align: center;',

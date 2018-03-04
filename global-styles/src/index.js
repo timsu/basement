@@ -57,6 +57,10 @@ const Root = styled.div``
 export const dimensionProps = css`
 	${p => p.w ? `width:${p.w}px;`: ''}
 	${p => p.h ? `height:${p.h}px;`: ''}
+	${p => p.minw ? `min-width:${p.w}px;`: ''}
+	${p => p.minh ? `min-height:${p.h}px;`: ''}
+	${p => p.maxw ? `max-width:${p.w}px;`: ''}
+	${p => p.maxh ? `max-height:${p.h}px;`: ''}
 `
 
 export const spacingProps = css`
@@ -113,6 +117,8 @@ export const boxProps = css`
 	${p => p.smHide ? media.sm` ${hideVisually}` : '' }
 	${p => p.mdHide ? media.md` ${hideVisually}` : '' }
 	${p => p.lgHide ? media.lg` ${hideVisually}` : '' }
+
+	${ p => p.if 		? s.if : '' }
 `
 
 export const Column = styled(Root)`
