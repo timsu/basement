@@ -16,6 +16,7 @@ const unselectable = css` user-select:none; & * { user-select:none; } `
 const untouchable = css` ${unselectable} pointer-events:none; & * { pointer-events:none; }  `
 const actionable = css` ${unselectable} cursor:pointer;  `
 
+// Usage s.media.sm``
 const media = {
   sm: (...args) => css`
     @media (max-width: 500px) {
@@ -54,13 +55,15 @@ export const triangleDown = ( size, color ) => css` ${baseTriangle}
 
 const Root = styled.div``
 
+const stringOrNumber = ( input ) => typeof input == 'number' ? input+'px' : input
+
 export const dimensionProps = css`
-	${p => p.w ? `width:${p.w}px;`: ''}
-	${p => p.h ? `height:${p.h}px;`: ''}
-	${p => p.minw ? `min-width:${p.w}px;`: ''}
-	${p => p.minh ? `min-height:${p.h}px;`: ''}
-	${p => p.maxw ? `max-width:${p.w}px;`: ''}
-	${p => p.maxh ? `max-height:${p.h}px;`: ''}
+	${p => p.w ? `width:${stringOrNumber(p.w)};` : ''}
+	${p => p.h ? `height:${stringOrNumber(p.h)};` : ''}
+	${p => p.minw ? `min-width:${stringOrNumber(p.minw)};` : ''}
+	${p => p.minh ? `min-height:${stringOrNumber(p.minh)};` : ''}
+	${p => p.maxw ? `max-width:${stringOrNumber(p.maxw)};` : ''}
+	${p => p.maxh ? `max-height:${stringOrNumber(p.maxh)};` : ''}
 `
 
 export const spacingProps = css`
@@ -124,14 +127,14 @@ export const boxProps = css`
 export const Column = styled(Root)`
   ${ p => p.hCenter ? s.aic : '' }
   ${ p => p.vCenter ? s.jcc : '' }
-	${boxProps}
   ${s.flxCol}
+	${boxProps}
 `
 export const Row = styled(Root)`
   ${ p => p.hCenter ? s.jcc : '' }
 	${ p => p.vCenter ? s.aic : '' }
-	${boxProps}
   ${s.flxRow}
+	${boxProps}
 `
 export const Box = styled(({ tag, children, ...props }) => React.createElement(tag ? tag : Root, props, children))`
 	${boxProps}
