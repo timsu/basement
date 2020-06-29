@@ -1,1 +1,1 @@
-module.exports = require('./lib/native')
+module.exports = require('./dist/native')
